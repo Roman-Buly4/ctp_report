@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}
+
+{{ report.location }}. {{ report.date }}
+{% endblock %}
+
+{% block content %}
+  <form>
+    <table>
+    {{ form.as_p }}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %} 

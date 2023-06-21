@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% block title %}
+  Удалить задачу
+{% endblock %}
+
+{% block content %}
+
+{% comment %} {% with data=form.instance %}
+{% if '/edit/' in request.path %}
+<h2>Редактировать заявку {{ data.pk }}</h2>
+{% elif  '/delete/' in request.path %}
+<h2>Удалить заявку {{ data.pk }}</h2>
+{% else %}
+<h2>Подать заявку</h2>
+{% endif %} {% endcomment %}
+
+<div class="card-header">
+    Удалить задачу?
+</div>
+<div class="card-body">
+    <form method="post">
+      {% csrf_token %}
+        <p>{{ report.number_report }}</p>
+        <p>{{ report.about_report }}</p>
+      {% bootstrap_button button_type="submit" content="Ok" %}
+    </form>
+</div>
+{% endblock %} 
+
